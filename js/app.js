@@ -1,5 +1,7 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+import { supabase } from "./supabase.js";
+
+document.addEventListener("DOMContentLoaded", async () => {
 
     const appStatus = document.getElementById("appStatus");
 
@@ -15,32 +17,51 @@ document.addEventListener("DOMContentLoaded", () => {
     const historyButton = document.getElementById("historyButton");
 
     scanButton?.addEventListener("click", () => {
-        atualizarStatus("Leitor de produtos será implementado na próxima etapa.");
+        atualizarStatus("Leitor de produtos será implementado.");
     });
 
     catalogButton?.addEventListener("click", () => {
-        atualizarStatus("Catálogo de produtos será implementado na próxima etapa.");
+        atualizarStatus("Catálogo de produtos será implementado.");
     });
 
     searchButton?.addEventListener("click", () => {
-        atualizarStatus("Pesquisa de produtos será implementada na próxima etapa.");
+        atualizarStatus("Pesquisa de produtos será implementada.");
     });
 
     historyButton?.addEventListener("click", () => {
-        atualizarStatus("Histórico será implementado na próxima etapa.");
+        atualizarStatus("Histórico será implementado.");
     });
+
+    atualizarStatus("Conectando ao banco de dados...");
+
+    try {
+        const { data, error } = await supabase
+            .from("produtos")
+            .select("id, nome")
+            .limit(1);
+
+        if (error) {
+            throw error;
+        }
+
+        console.log("Conexão com Supabase realizada!");
+        console.log("Produtos encontrados:", data);
+
+        atualizarStatus(
+            `Supabase conectado! ${data.length > 0
+                ? "Catálogo possui produtos cadastrados."
+                : "Catálogo ainda está vazio."}`
+        );
+
+    } catch (erro) {
+        console.error("Erro na conexão com Supabase:", erro);
+        atualizarStatus("Não foi possível conectar ao banco. Verifique a configuração.");
+    }
 
     if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("./sw.js")
-            .then(() => {
-                atualizarStatus("MeuScaner está funcionando e pronto para uso.");
-            })
             .catch((erro) => {
-                console.error("Erro ao registrar Service Worker:", erro);
-                atualizarStatus("Aplicativo aberto, mas houve um erro no modo offline.");
+                console.error("Erro no Service Worker:", erro);
             });
-    } else {
-        atualizarStatus("MeuScaner está funcionando.");
     }
-
 });
