@@ -1,0 +1,14 @@
+
+{
+    "id": "./",
+    "name": "Meu Scanner",
+    "short_name": "Meu Scanner",
+    "description": "Scanner inteligente de produtos",
+    "lang": "pt-BR",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#f2f5fa",
+    "theme_color": "#1769e0"
+}
