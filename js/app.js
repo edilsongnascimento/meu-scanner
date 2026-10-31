@@ -1,29 +1,46 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const status = document.getElementById("appStatus");
+    const appStatus = document.getElementById("appStatus");
 
-    status.textContent = "Meu Scanner está funcionando!";
+    function atualizarStatus(mensagem) {
+        if (appStatus) {
+            appStatus.textContent = mensagem;
+        }
+    }
 
-    document.getElementById("scanButton").addEventListener("click", () => {
-        alert("Scanner: recurso em desenvolvimento.");
+    const scanButton = document.getElementById("scanButton");
+    const catalogButton = document.getElementById("catalogButton");
+    const searchButton = document.getElementById("searchButton");
+    const historyButton = document.getElementById("historyButton");
+
+    scanButton?.addEventListener("click", () => {
+        atualizarStatus("Leitor de produtos será implementado na próxima etapa.");
     });
 
-    document.getElementById("catalogButton").addEventListener("click", () => {
-        alert("Catálogo: recurso em desenvolvimento.");
+    catalogButton?.addEventListener("click", () => {
+        atualizarStatus("Catálogo de produtos será implementado na próxima etapa.");
     });
 
-    document.getElementById("searchButton").addEventListener("click", () => {
-        alert("Pesquisa: recurso em desenvolvimento.");
+    searchButton?.addEventListener("click", () => {
+        atualizarStatus("Pesquisa de produtos será implementada na próxima etapa.");
     });
 
-    document.getElementById("historyButton").addEventListener("click", () => {
-        alert("Histórico: recurso em desenvolvimento.");
+    historyButton?.addEventListener("click", () => {
+        atualizarStatus("Histórico será implementado na próxima etapa.");
     });
 
     if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("./sw.js")
-            .catch(error => console.error("Erro no Service Worker:", error));
+            .then(() => {
+                atualizarStatus("MeuScaner está funcionando e pronto para uso.");
+            })
+            .catch((erro) => {
+                console.error("Erro ao registrar Service Worker:", erro);
+                atualizarStatus("Aplicativo aberto, mas houve um erro no modo offline.");
+            });
+    } else {
+        atualizarStatus("MeuScaner está funcionando.");
     }
 
 });
