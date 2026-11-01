@@ -3,12 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const installButton = document.getElementById("installButton");
     const installMessage = document.getElementById("installMessage");
 
+    const goToCatalog = (hash = "#buscar") => {
+        window.location.href = `./catalogo.html${hash}`;
+    };
+
     document.getElementById("scannerButton")?.addEventListener("click", () => {
         window.location.href = "./scanner.html";
     });
 
     document.getElementById("searchButton")?.addEventListener("click", () => {
-        window.location.href = "./catalogo.html#buscar";
+        goToCatalog();
     });
 
     const isInstalled = window.matchMedia("(display-mode: standalone)").matches
