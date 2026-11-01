@@ -24,8 +24,23 @@
     <main class="container">
         <section class="welcome">
             <h2>Olá!</h2>
-            <p>O app agora usa uma única tela de busca para pesquisar, comparar e acessar favoritos.</p>
-            <p><a href="./catalogo.html#buscar" class="primary-button">Abrir pesquisa</a></p>
+            <p>Use uma única tela para buscar, comparar e gerenciar seus favoritos.</p>
+            <p>
+                <a href="./catalogo.html#buscar" class="primary-button">Abrir pesquisa</a>
+            </p>
+        </section>
+
+        <section class="main-actions">
+            <button class="action-card primary" id="scannerButton" type="button">
+                <span>📷</span>
+                <strong>Ler produto</strong>
+                <small>Escaneie o código ou leia o rótulo</small>
+            </button>
+            <button class="action-card primary" id="searchButton" type="button">
+                <span>🔎</span>
+                <strong>Pesquisar produtos</strong>
+                <small>Busca principal em uma só tela</small>
+            </button>
         </section>
 
         <section class="status-card">
@@ -39,8 +54,5 @@
         <p>MeuScaner © 2026</p>
     </footer>
     <script type="module" src="./js/app.js"></script>
-    <script>
-        window.location.replace("./catalogo.html#buscar");
-    </script>
 </body>
 </html>
