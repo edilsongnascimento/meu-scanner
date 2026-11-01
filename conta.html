@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1769e0">
+    <title>Minha conta - MeuScaner</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🛒</div>
+        <div>
+            <h1>MeuScaner</h1>
+            <p>Conta e favoritos</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="./index.html" class="back-link">← Voltar ao início</a>
+        <section class="account-card">
+            <h2>Minha conta</h2>
+            <p id="accountStatus" role="status">Verificando sessão...</p>
+
+            <div id="accountForms">
+                <form id="signInForm" class="account-form">
+                    <h3>Entrar</h3>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" autocomplete="email" required>
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" autocomplete="current-password" minlength="6" required>
+                    <button type="submit" id="signInButton">Entrar</button>
+                </form>
+
+                <form id="signUpForm" class="account-form">
+                    <h3>Criar conta</h3>
+                    <label for="newEmail">E-mail</label>
+                    <input type="email" id="newEmail" autocomplete="email" required>
+                    <label for="newPassword">Senha (mínimo 6 caracteres)</label>
+                    <input type="password" id="newPassword" autocomplete="new-password" minlength="6" required>
+                    <button type="submit" id="signUpButton">Criar conta</button>
+                </form>
+            </div>
+
+            <button type="button" id="signOutButton" class="secondary-button" hidden>Sair da conta</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>MeuScaner © 2026</p>
+    </footer>
+    <script type="module" src="./js/conta.js"></script>
+</body>
+</html>

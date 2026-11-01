@@ -124,3 +124,413 @@ button:active {
         grid-template-columns: 1fr;
     }
 }
+
+/* CATÁLOGO DE PRODUTOS */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #1769e0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.catalog-header {
+    margin-bottom: 20px;
+}
+
+.catalog-header h2 {
+    margin-bottom: 6px;
+}
+
+.catalog-header p {
+    color: #68778a;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.search-area {
+    margin-bottom: 18px;
+}
+
+.search-area input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d8e0eb;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+}
+
+.search-area input:focus {
+    border-color: #1769e0;
+    box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.10);
+}
+
+#productCount {
+    color: #68778a;
+    font-size: 13px;
+    margin: 10px 2px;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: white;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.product-image {
+    width: 78px;
+    height: 78px;
+    min-width: 78px;
+    border-radius: 10px;
+    background: #f2f5fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-image span {
+    font-size: 30px;
+}
+
+.product-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-info h3 {
+    margin: 0;
+    font-size: 15px;
+    color: #263445;
+    overflow-wrap: anywhere;
+}
+
+.product-info p {
+    margin: 0;
+    color: #68778a;
+    font-size: 13px;
+}
+
+.product-info small {
+    color: #8490a0;
+    font-size: 12px;
+}
+
+.catalog-message {
+    color: #c0392b;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.loading-message {
+    color: #68778a;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.header-account-link {
+    margin-left: auto;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.search-area label {
+    display: block;
+    margin-bottom: 8px;
+    color: #263445;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.search-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.search-controls input {
+    min-width: 0;
+    flex: 1;
+}
+
+.search-controls button,
+.account-form button {
+    border: 0;
+    border-radius: 10px;
+    padding: 0 18px;
+    background: #1769e0;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-controls button:disabled,
+.account-form button:disabled,
+.secondary-button:disabled,
+.compare-button:disabled,
+.favorite-button:disabled,
+.remove-compare-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.product-card-actions,
+.comparison-product-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.compare-button,
+.favorite-button,
+.secondary-button,
+.remove-compare-button {
+    border: 0;
+    border-radius: 8px;
+    padding: 9px 12px;
+    background: #1769e0;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.secondary-button,
+.remove-compare-button {
+    background: #e9eef5;
+    color: #263445;
+}
+
+.favorite-button {
+    background: #16803c;
+}
+
+.product-source-link,
+.secondary-link {
+    color: #1769e0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.catalog-message.status-error,
+.status-error {
+    color: #c0392b;
+}
+
+.comparison-section,
+.favorites-section,
+.account-card {
+    margin-top: 26px;
+    padding: 18px;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.comparison-section h2,
+.favorites-section h2,
+.account-card h2 {
+    margin-top: 0;
+}
+
+.comparison-section > p,
+.section-heading p,
+.account-card > p {
+    color: #68778a;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.comparison-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    min-width: 115px;
+    padding: 10px;
+    border: 1px solid #e1e7ef;
+    text-align: left;
+    vertical-align: top;
+}
+
+.comparison-table thead th {
+    min-width: 180px;
+    background: #f7f9fc;
+}
+
+.comparison-table thead th:first-child {
+    min-width: 150px;
+}
+
+.comparison-table thead th span,
+.comparison-table thead th strong {
+    display: block;
+    margin-bottom: 6px;
+    overflow-wrap: anywhere;
+}
+
+.comparison-table thead th span {
+    color: #68778a;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.comparison-product-actions {
+    align-items: flex-start;
+}
+
+.comparison-product-actions button {
+    padding: 7px 9px;
+    font-size: 12px;
+}
+
+.comparison-note {
+    color: #68778a;
+    font-size: 13px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.section-heading h2 {
+    margin-bottom: 5px;
+}
+
+.data-attribution {
+    margin: 24px 0;
+    color: #68778a;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.data-attribution a {
+    color: #1769e0;
+}
+
+.account-card {
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#accountForms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid #e1e7ef;
+    border-radius: 12px;
+}
+
+.account-form h3 {
+    margin: 0 0 4px;
+}
+
+.account-form label {
+    color: #263445;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.account-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5dce5;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.account-form input:focus {
+    outline: none;
+    border-color: #1769e0;
+    box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.12);
+}
+
+.account-form button {
+    min-height: 44px;
+    margin-top: 8px;
+}
+
+.account-card > .secondary-button {
+    margin-top: 12px;
+}
+
+@media (max-width: 500px) {
+    .header {
+        gap: 8px;
+        padding: 18px 12px;
+    }
+
+    .header-account-link {
+        font-size: 12px;
+    }
+
+    .search-controls {
+        flex-direction: column;
+    }
+
+    .search-controls button {
+        min-height: 44px;
+    }
+
+    .product-item {
+        flex-wrap: wrap;
+    }
+
+    .product-card-actions {
+        width: 100%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

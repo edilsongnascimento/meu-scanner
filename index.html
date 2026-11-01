@@ -1,74 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>MeuScaner</title>
-
     <meta name="theme-color" content="#1769e0">
-    <meta name="description" content="MeuScaner - identificação inteligente de produtos">
-
+    <meta name="description" content="Pesquise, compare e favorite produtos.">
     <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
     <header class="header">
         <div class="logo">🛒</div>
         <div>
             <h1>MeuScaner</h1>
-            <p>Seu catálogo inteligente de produtos</p>
+            <p>Pesquise e compare produtos</p>
         </div>
+        <a class="header-account-link" href="./conta.html">Minha conta</a>
     </header>
 
     <main class="container">
-
         <section class="welcome">
             <h2>Olá!</h2>
-            <p>Identifique, cadastre e encontre produtos facilmente.</p>
+            <p>Encontre produtos no Open Food Facts, compare informações nutricionais e salve seus favoritos.</p>
         </section>
 
         <section class="main-actions">
-
-            <button class="action-card primary" id="scanButton">
-                <span>📷</span>
-                <strong>Escanear produto</strong>
-                <small>Identifique um produto pela câmera</small>
-            </button>
-
-            <button class="action-card" id="catalogButton">
-                <span>🛒</span>
-                <strong>Catálogo de produtos</strong>
-                <small>Consulte os produtos cadastrados</small>
-            </button>
-
-            <button class="action-card" id="searchButton">
+            <button class="action-card primary" id="searchButton">
                 <span>🔎</span>
                 <strong>Pesquisar produtos</strong>
-                <small>Encontre produtos pelo nome</small>
+                <small>Busque por nome ou código de barras</small>
             </button>
-
-          <button class="action-card" id="historyButton">
-                <span>📚</span>
-                <strong>Histórico</strong>
-                <small>Veja seus últimos escaneamentos</small>
-          </button>
-
+            <button class="action-card" id="compareButton">
+                <span>⚖️</span>
+                <strong>Comparar produtos</strong>
+                <small>Compare até 3 produtos antes de favoritar</small>
+            </button>
+            <button class="action-card" id="favoritesButton">
+                <span>⭐</span>
+                <strong>Meus favoritos</strong>
+                <small>Acesse os produtos salvos na sua conta</small>
+            </button>
         </section>
 
         <section class="status-card">
-            <h3>Status do aplicativo</h3>
-            <p id="appStatus">MeuScaner iniciado.</p>
+            <h3>Como funciona</h3>
+            <p>As buscas vêm diretamente do Open Food Facts. Somente os produtos que você favoritar são guardados na sua conta.</p>
         </section>
-
     </main>
 
     <footer>
         <p>MeuScaner © 2026</p>
     </footer>
-
     <script type="module" src="./js/app.js"></script>
 </body>
 </html>

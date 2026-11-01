@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1769e0">
+    <meta name="description" content="Pesquise e compare produtos usando o Open Food Facts.">
+    <title>Produtos - MeuScaner</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🛒</div>
+        <div>
+            <h1>MeuScaner</h1>
+            <p>Busca e comparação de produtos</p>
+        </div>
+        <a class="header-account-link" href="./conta.html?next=catalogo.html%23favoritos">Minha conta</a>
+    </header>
+
+    <main class="container">
+        <a href="./index.html" class="back-link">← Voltar ao início</a>
+
+        <section class="catalog-header">
+            <h2>Encontre um produto</h2>
+            <p>Pesquise pelo nome ou código de barras no catálogo do Open Food Facts. Os resultados não são copiados para o nosso banco.</p>
+        </section>
+
+        <form id="productSearchForm" class="search-area">
+            <label for="productSearch">Nome ou código de barras</label>
+            <div class="search-controls">
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="Ex.: leite ou código de barras"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="searchSubmitButton">Pesquisar</button>
+            </div>
+            <p id="productCount" aria-live="polite">Digite um produto para pesquisar.</p>
+        </form>
+
+        <p id="catalogMessage" class="catalog-message" role="status"></p>
+
+        <section id="productList" class="product-list" aria-live="polite"></section>
+
+        <button type="button" id="loadMoreButton" class="secondary-button" hidden>
+            Carregar mais produtos
+        </button>
+
+        <section id="comparisonSection" class="comparison-section" aria-labelledby="comparisonTitle">
+            <h2 id="comparisonTitle">Compare antes de favoritar</h2>
+            <p>Selecione até 3 produtos nos resultados. A comparação usa os valores nutricionais informados por 100 g ou 100 ml.</p>
+            <p id="comparisonCount" aria-live="polite">Nenhum produto selecionado.</p>
+            <div id="comparisonTableContainer"></div>
+        </section>
+
+        <section id="favoritesSection" class="favorites-section" aria-labelledby="favoritesTitle">
+            <div class="section-heading">
+                <div>
+                    <h2 id="favoritesTitle">Meus favoritos</h2>
+                    <p id="favoritesStatus" role="status">Entre na sua conta para ver seus favoritos.</p>
+                </div>
+                <a class="secondary-link" href="./conta.html?next=catalogo.html%23favoritos">Entrar ou criar conta</a>
+            </div>
+            <div id="favoritesList" class="product-list"></div>
+        </section>
+
+        <p class="data-attribution">
+            Dados de produtos fornecidos por
+            <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener noreferrer">Open Food Facts</a>.
+            Informações colaborativas podem estar incompletas ou incorretas.
+        </p>
+    </main>
+
+    <footer>
+        <p>MeuScaner © 2026</p>
+    </footer>
+    <script type="module" src="./js/catalogo.js"></script>
+</body>
+</html>
