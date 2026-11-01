@@ -11,14 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "./catalogo.html#buscar";
     });
 
-    document.getElementById("compareButton")?.addEventListener("click", () => {
-        window.location.href = "./catalogo.html#comparar";
-    });
-
-    document.getElementById("favoritesButton")?.addEventListener("click", () => {
-        window.location.href = "./catalogo.html#favoritos";
-    });
-
     const isInstalled = window.matchMedia("(display-mode: standalone)").matches
         || window.navigator.standalone === true;
     if (isInstalled && installButton) installButton.hidden = true;
