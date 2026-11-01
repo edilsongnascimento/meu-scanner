@@ -751,7 +751,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         favoritesStatus.classList.add("status-error");
     }
 
-    if (window.location.hash === "#buscar") {
+    const initialQuery = new URLSearchParams(window.location.search).get("q")?.trim();
+    if (initialQuery) {
+        productSearch.value = initialQuery;
+        await pesquisar(initialQuery);
+    } else if (window.location.hash === "#buscar") {
         productSearch.focus();
     } else if (window.location.hash === "#comparar") {
         document.getElementById("comparisonSection").scrollIntoView();

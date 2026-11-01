@@ -1,14 +1,18 @@
 
-const CACHE_NAME = "meuscaner-v2";
+const CACHE_NAME = "meuscaner-v3";
 
 const FILES_TO_CACHE = [
     "./",
     "./index.html",
+    "./scanner.html",
     "./catalogo.html",
     "./conta.html",
     "./manifest.json",
+    "./assets/icons/icon-192.png",
+    "./assets/icons/icon-512.png",
     "./css/style.css",
     "./js/app.js",
+    "./js/scanner.js",
     "./js/catalogo.js",
     "./js/conta.js",
     "./js/supabase.js"

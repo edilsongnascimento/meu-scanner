@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1769e0">
+    <meta name="description" content="Leia o código de barras ou o rótulo de um produto.">
+    <title>Ler produto - MeuScaner</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">📷</div>
+        <div>
+            <h1>MeuScaner</h1>
+            <p>Leitura de produtos</p>
+        </div>
+        <a class="header-account-link" href="./conta.html">Minha conta</a>
+    </header>
+
+    <main class="container">
+        <a href="./index.html" class="back-link">← Voltar ao início</a>
+
+        <section class="scanner-section">
+            <h2>Leia um produto</h2>
+            <p>Escaneie o código de barras com a câmera ou fotografe o rótulo para sugerir o nome e o peso.</p>
+
+            <section class="scanner-card" aria-labelledby="barcodeTitle">
+                <h3 id="barcodeTitle">Código de barras</h3>
+                <video id="scannerVideo" class="scanner-video" autoplay muted playsinline hidden></video>
+                <p id="scannerStatus" class="scanner-status" role="status">A câmera só é ativada quando você tocar no botão.</p>
+                <div class="scanner-actions">
+                    <button id="startScannerButton" class="primary-button" type="button">Abrir câmera</button>
+                    <button id="stopScannerButton" class="secondary-button" type="button" hidden>Fechar câmera</button>
+                </div>
+
+                <form id="barcodeForm" class="scanner-form">
+                    <label for="barcodeInput">Ou digite o código de barras</label>
+                    <div class="search-controls">
+                        <input id="barcodeInput" type="text" inputmode="numeric" autocomplete="off" placeholder="Ex.: 7891234567890" pattern="[0-9]{8,14}" required>
+                        <button type="submit">Pesquisar código</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="scanner-card" aria-labelledby="labelTitle">
+                <h3 id="labelTitle">Ler o rótulo</h3>
+                <p>O reconhecimento é feito neste aparelho. Revise e edite as sugestões antes de pesquisar.</p>
+                <label class="primary-button file-button" for="labelImage">Fotografar ou escolher uma imagem</label>
+                <input id="labelImage" class="visually-hidden" type="file" accept="image/*" capture="environment">
+                <img id="labelPreview" class="label-preview" alt="Prévia da imagem do rótulo" hidden>
+                <p id="ocrStatus" class="scanner-status" role="status"></p>
+                <div class="scanner-form">
+                    <label for="suggestedName">Nome sugerido</label>
+                    <input id="suggestedName" type="text" autocomplete="off" maxlength="120" placeholder="Revise ou digite o nome do produto">
+                    <label for="suggestedQuantity">Peso ou volume sugerido</label>
+                    <input id="suggestedQuantity" type="text" autocomplete="off" maxlength="40" placeholder="Ex.: 500 g ou 1 L">
+                    <button id="searchLabelButton" class="primary-button" type="button">Pesquisar sugestão</button>
+                </div>
+                <details class="ocr-details">
+                    <summary>Conferir texto reconhecido</summary>
+                    <pre id="recognizedText"></pre>
+                </details>
+            </section>
+        </section>
+
+        <p class="data-attribution">
+            Os dados de produtos são fornecidos por
+            <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener noreferrer">Open Food Facts</a>.
+            A foto do rótulo é processada localmente e não é enviada ao aplicativo.
+        </p>
+    </main>
+
+    <footer><p>MeuScaner © 2026</p></footer>
+    <script type="module" src="./js/scanner.js"></script>
+</body>
+</html>

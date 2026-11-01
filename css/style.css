@@ -263,6 +263,182 @@ button:active {
     white-space: nowrap;
 }
 
+.install-button {
+    margin-left: auto;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 9px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.header .install-button + .header-account-link {
+    margin-left: 0;
+}
+
+.install-message {
+    padding: 12px;
+    border-radius: 10px;
+    background: #e5efff;
+    color: #263445;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.scanner-section > h2 {
+    margin-bottom: 6px;
+}
+
+.scanner-section > p,
+.scanner-card > p {
+    color: #68778a;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.scanner-card {
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.scanner-card h3 {
+    margin-top: 0;
+}
+
+.scanner-video {
+    display: block;
+    width: 100%;
+    max-height: 55vh;
+    border-radius: 12px;
+    background: #17202d;
+    object-fit: cover;
+}
+
+.scanner-status {
+    min-height: 20px;
+    color: #68778a;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.scanner-actions,
+.scanner-form {
+    display: grid;
+    gap: 10px;
+}
+
+.scanner-actions {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.scanner-form {
+    margin-top: 18px;
+}
+
+.scanner-form label {
+    color: #263445;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.scanner-form input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+    border: 1px solid #d8e0eb;
+    border-radius: 10px;
+    background: #ffffff;
+    font: inherit;
+}
+
+.scanner-form input:focus {
+    outline: none;
+    border-color: #1769e0;
+    box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.10);
+}
+
+.primary-button,
+.file-button {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 9px;
+    background: #1769e0;
+    color: #ffffff;
+    font: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.primary-button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.file-button {
+    width: 100%;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.visually-hidden:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    clip-path: none;
+}
+
+.label-preview {
+    display: block;
+    width: 100%;
+    max-height: 380px;
+    margin-top: 14px;
+    border-radius: 10px;
+    background: #f2f5fa;
+    object-fit: contain;
+}
+
+.ocr-details {
+    margin-top: 16px;
+    color: #526174;
+    font-size: 13px;
+}
+
+.ocr-details summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ocr-details pre {
+    max-height: 220px;
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.scanner-card .search-controls button {
+    min-height: 46px;
+}
+
 .search-area label {
     display: block;
     margin-bottom: 8px;
@@ -511,6 +687,10 @@ button:active {
 
     .header-account-link {
         font-size: 12px;
+    }
+
+    .install-button {
+        padding: 7px;
     }
 
     .search-controls {
