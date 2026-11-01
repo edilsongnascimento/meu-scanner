@@ -24,30 +24,8 @@
     <main class="container">
         <section class="welcome">
             <h2>Olá!</h2>
-            <p>Encontre produtos no Open Food Facts, compare informações nutricionais e salve seus favoritos.</p>
-        </section>
-
-        <section class="main-actions">
-            <button class="action-card primary" id="scannerButton">
-                <span>📷</span>
-                <strong>Ler produto</strong>
-                <small>Escaneie o código de barras ou leia o rótulo</small>
-            </button>
-            <button class="action-card primary" id="searchButton">
-                <span>🔎</span>
-                <strong>Pesquisar produtos</strong>
-                <small>Busque por nome ou código de barras</small>
-            </button>
-            <button class="action-card" id="compareButton">
-                <span>⚖️</span>
-                <strong>Comparar produtos</strong>
-                <small>Compare até 3 produtos antes de favoritar</small>
-            </button>
-            <button class="action-card" id="favoritesButton">
-                <span>⭐</span>
-                <strong>Meus favoritos</strong>
-                <small>Acesse os produtos salvos na sua conta</small>
-            </button>
+            <p>Você será redirecionado para a busca de produtos em uma única tela.</p>
+            <p><a href="./catalogo.html#buscar" class="primary-button">Abrir pesquisa</a></p>
         </section>
 
         <section class="status-card">
@@ -61,5 +39,8 @@
         <p>MeuScaner © 2026</p>
     </footer>
     <script type="module" src="./js/app.js"></script>
+    <script>
+        window.location.replace("./catalogo.html#buscar");
+    </script>
 </body>
 </html>
